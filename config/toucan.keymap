@@ -9,6 +9,27 @@
 #define ADJ  3
 
 #define SFT_A &mt LSHIFT A
+#define CTRL_S &mt LCTRL S
+#define ALT_D &mt LALT D
+#define GUI_F &mt LGUI F
+
+#define GUI_J &mt RGUI J
+#define ALT_K &mt RALT K
+#define CTRL_L &mt RCTRL L
+#define SFT_SEMI &mt RSHIFT SEMI
+
+#define SFT_GRAVE &mt LSHIFT GRAVE
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <38 39>;
+            bindings = <&kp RET>;
+        };
+    };
+};
 
 / {
     conditional_layers {
@@ -25,10 +46,10 @@
         base {
             display-name = "BASE";
             bindings = <
-                &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-                &kp LCTRL SFT_A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-                &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                                &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+                &kp TAB   &kp Q &kp W  &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp EQUAL
+                &kp ESC   SFT_A CTRL_S ALT_D GUI_F &kp G   &kp H GUI_J  ALT_K     CTRL_L  SFT_SEMI &kp SQT
+                SFT_GRAVE &kp Z &kp X  &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp GRAVE
+                                &none  &mo 1 &kp SPACE     &kp BSPC &mo 2 &none
             >;
         };
 
