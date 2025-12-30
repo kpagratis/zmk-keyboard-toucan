@@ -20,6 +20,12 @@
 
 #define SFT_GRAVE &mt LSHIFT GRAVE
 
+
+&mt {
+    flavor = "tap-preferred";
+    tapping-term-ms = <180>;
+};
+
 / {
     combos {
         compatible = "zmk,combos";
