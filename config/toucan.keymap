@@ -10,7 +10,6 @@
 
 #define SFT_A &mt LSHIFT A
 
-
 / {
     conditional_layers {
         compatible = "zmk,conditional-layers";
